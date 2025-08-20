@@ -1,0 +1,117 @@
+[window]
+dimensions = { columns = 92, lines = 24 }
+#position = { x = 504, y = 434 }
+padding = { x = 8, y = 8 }
+decorations = "full"
+startup_mode = "Windowed"
+opacity = 1
+#blur = true
+title = "Terminal~@TMUX"
+
+#[bell]
+#command = { program = "paplay", args = ["/usr/share/sounds/freedesktop/stereo/bell.oga"] }
+
+[env]
+TERM = "alacritty"
+
+[scrolling]
+history = 1000
+
+[font]
+normal = { family = "Fira Code", style = "Regular" }
+bold = { family = "Fira Code", style = "Bold" }
+size = 10
+offset                = { x = 0, y = 0 }
+glyph_offset          = { x = 0, y = 0 }
+
+[cursor]
+style.shape = "underline"
+style.blinking = "On"
+blink_interval = 400
+blink_timeout = 0
+unfocused_hollow = false
+thickness = 0.25
+
+[cursor.vi_mode_style]
+shape = "Block"
+blinking = "Off"
+
+[selection]
+save_to_clipboard = false
+
+[colors]
+draw_bold_text_with_bright_colors = true
+# Default colors
+[colors.primary]
+background = '#171d23'
+foreground = '#ffffff'
+
+# Cursor colors
+[colors.cursor]
+text   = '#fafafa'
+##cursor = '#008b94'
+cursor = '#ff0000'
+# Normal colors
+[colors.normal]
+black   = '#333f4a'
+red     = '#d95468'
+green   = '#8bd49c'
+blue    = '#539afc'
+magenta = '#b62d65'
+cyan    = '#70e1e8'
+white   = '#b7c5d3'
+
+# Bright colors
+[colors.bright]
+black   = '#41505e'
+red     = '#d95468'
+green   = '#8bd49c'
+yellow  = '#ebbf83'
+blue    = '#5ec4ff'
+magenta = '#e27e8d'
+cyan    = '#70e1e8'
+white   = '#ffffff'
+[terminal.shell]
+program               = "/usr/bin/zsh"
+args                  = [ "--login", ]
+[keyboard]
+bindings = [
+	#ALT KEYS
+  { key = "Left", mods = "Alt", chars = "\u001b[D\u001b[D\u001b[D\u001b[D" },
+  { key = "Right", mods = "Alt", chars = "\u001b[C\u001b[C\u001b[C\u001b[C" },
+  { key = "Back", mods = "Alt", chars = "\u0008\u0008\u0008\u0008" },
+	#CONTROL KEYS
+  { key = "0", mods = "Control", action = "ResetFontSize" },
+  { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "L", mods = "Control", chars  = "\f" },
+  { key = "L", mods = "Control", action = "ClearLogNotice" },
+#  { key = "`", mods = "Control", action = "Quit" },
+  	#COMBINED KEYS
+  { key = "T", mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "M", mods = "Control|Shift", action = "ToggleFullscreen" },
+  { key = "PageUp", mods = "Control|Shift", action = "SelectPreviousTab" },
+  { key = "PageDown", mods = "Control|Shift", action = "SelectNextTab" },
+  	#SHIFT KEYS
+  { key = "PageUp",   mods = "Shift",         action = "ScrollPageUp",      mode = "~Alt" },
+  { key = "PageDown", mods = "Shift",         action = "ScrollPageDown",    mode = "~Alt" },
+  { key = "Up",       mods = "Shift",         action = "ScrollLineUp",      mode = "~Alt" },
+  { key = "Down",     mods = "Shift",         action = "ScrollLineDown",    mode = "~Alt" },
+  { key = "Home",     mods = "Shift",         action = "ScrollToTop",       mode = "~Alt" },
+  { key = "End",      mods = "Shift",         action = "ScrollToBottom",    mode = "~Alt" }
+
+]
+[mouse]
+hide_when_typing = false
+
+[debug]
+#persistent_logging = true
+#log_level = "Debug"
+#renderer = "None"         # Let Alacritty auto-pick (usually EGL on Wayland)
+#print_events = true       # Shows input key events in log (good for debugging keys)
+#highlight_damage = false  # Enable `true` if testing rendering issues
+#prefer_egl = true         # Wayland prefers EGL over GLX
+#render_timer = true      # Set true only if benchmarking FPS
+
